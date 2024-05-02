@@ -26,6 +26,40 @@ int main
     printf("0000000000000                    444             0000000000000                7777                           \n");
     printf(" 00000000000                     444              00000000000                 7777                           \n");
     printf("  000000000                      444               000000000                  7777                           \n");
+    printf("\n");
+    
+    //個人頁面
+    
+    int password=2024; //設定初始密碼為2024
+    int inputPassword; //設定要輸入的密碼為inputPassword
+    int count=0; //設定計算輸入錯誤的次數，一開始為0
+    
+    
+    while(count <3) //若輸入錯誤次數小於0，執行
+    {
+        printf("請輸入4個數字的密碼:"); //print
+        scanf("%d", &inputPassword); //輸入數字
+        
+        if(password==inputPassword)
+        {
+            printf("輸入正確\n"); //print
+            printf("您輸入的密碼為：%d\n", inputPassword); //print
+            break; //中止並結束迴圈
+        }
+        else
+        {
+            count++; //因輸入錯誤所以count+1
+            printf("錯誤, 請再輸入一次\a\n");
+        }
+        if (count==3){
+            printf("警告已連續輸入錯誤三次!\n");
+        }
+        
+        printf("%d", inputPassword); //print輸入的數值
+        system ("CLS"); //清除螢幕
+    }
+}
+
     
     
     return 0;
