@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h> //Xcode沒有這個file所以我是直接的上去的
 
-int main
+int main()
 {
     printf("  000000000                     4444               000000000                77777777777777777777             \n");
     printf(" 00000000000                   44444              00000000000               77777777777777777777             \n");
@@ -56,54 +57,88 @@ int main
         }
         
         printf("%d", inputPassword); //print輸入的數值
-        system ("CLS"); //清除螢幕
+        
     }
-}
-
-
-printf("----------------------\n");
-printf("|  a. 畫出直角三角形    |\n");
-printf("|  b. 顯示乘法表       |\n");
-printf("|  c. 結束            |\n");
-printf("|                    |\n");
-printf("----------------------\n");
-
-//print主選單
-
-
-
-
-
-char word, n;
+    
+    system ("CLS"); //清除螢幕
+    
+    printf("----------------------\n");
+    printf("|  a. 畫出直角三角形    |\n");
+    printf("|  b. 顯示乘法表       |\n");
+    printf("|  c. 結束            |\n");
+    printf("|                    |\n");
+    printf("----------------------\n");
+    
+    //print主選單
+    
+    
+    
+    char word, n;
+    int times, i, j;
+    
+    
     printf("請輸入一個字元(a到c之間)：\n");
     scanf(" %s", &word);
-
-switch (word) 
-    {
-    case 'a': //輸入字母為a A則執行
-    case 'A':
-        printf("請輸入一個字元(a到n之間)：\n");
-        scanf(" %c", &n);
-        
-        if (n >= 'a' && n <= 'n') //若n在a到n之間則可以執行
+    
+    switch (word)
         {
-            for (char c = 'a'; c <= n; ++c) //產生'a'到'n'
+        case 'a': //輸入字母為a A則執行
+        case 'A':
+            printf("請輸入一個字元(a到n之間)：\n");
+            scanf(" %c", &n);
+            
+            if (n >= 'a' && n <= 'n') //若n在a到n之間則可以執行
             {
-                for (char d = 'a'; d <= c; ++d) //在字母序列中列印字母，直到達到當前字母（如a, ab, abc)
+                for (char c = 'a'; c <= n; ++c) //產生'a'到'n'
                 {
-                    printf("%c ", d);
+                    for (char d = 'a'; d <= c; ++d) //在字母序列中列印字母，直到達到當前字母（如a, ab, abc)
+                    {
+                        printf("%c ", d);
+                    }
+                    printf("\n");
                 }
-                printf("\n");
             }
-        }
-        else //其餘執行
-        {
-            printf("請輸入a到n之間的字母\n");
-        }
+            else //其餘執行
+            {
+                printf("請輸入a到n之間的字母\n");
+            }
+            
+        case'B':
+        case'b':
+            printf("請輸入一個數(1到9之間):");
+            scanf("%d", &times);
+            
+            if (times >= 1 && times <= 9) //若數字在1到9間可執行
+            {
+                
+                printf("乘法表：\n");
+                for (int i = 1; i <= times; ++i) //i=1時 i小於等於times 則i值+1
+                {
+                    for (int j = 1; j <= times; ++j) //j=1時 j小於等於times 則j值+1
+                    {
+                        printf("%d\t", i * j);
+                    }
+                    printf("\n");
+                    
+                }
+            }
+            
+             else
+             {
+                 printf("警告，請輸入1到9之間的數!\n");
+             }
+            
+            
+            getch(); //按任意鍵
+            system("cls");
+            
+            
+            
+            
         
-        break;
+                
+                break;
+            }
+            
+            return 0;
     }
-
-    return 0;
-}
-
