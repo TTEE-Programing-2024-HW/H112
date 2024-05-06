@@ -69,4 +69,41 @@ printf("|                    |\n");
 printf("----------------------\n");
 
 //print主選單
+
+
+
+
+
+char word, n;
+    printf("請輸入一個字元(a到c之間)：\n");
+    scanf(" %s", &word);
+
+switch (word) 
+    {
+    case 'a': //輸入字母為a A則執行
+    case 'A':
+        printf("請輸入一個字元(a到n之間)：\n");
+        scanf(" %c", &n);
+        
+        if (n >= 'a' && n <= 'n') //若n在a到n之間則可以執行
+        {
+            for (char c = 'a'; c <= n; ++c) //產生'a'到'n'
+            {
+                for (char d = 'a'; d <= c; ++d) //在字母序列中列印字母，直到達到當前字母（如a, ab, abc)
+                {
+                    printf("%c ", d);
+                }
+                printf("\n");
+            }
+        }
+        else //其餘執行
+        {
+            printf("請輸入a到n之間的字母\n");
+        }
+        
+        break;
+    }
+
+    return 0;
 }
+
