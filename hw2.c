@@ -146,3 +146,6 @@ int main()
         
         return 0;
     }
+
+//這次遇到的問題很多，尤其是因為Xcode沒有conio.h的file讓我在使用getch的時候很卡，會讓我一直在Xcode跟web c++上漆來切去超級麻煩
+//希望我可以早點對Xcode上手
