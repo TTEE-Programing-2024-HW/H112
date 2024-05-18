@@ -61,4 +61,16 @@ int main()
     }
     
     system ("cls"); //clear
+    
+    printf("--------[Booking System]--------------\n");
+    printf("|       a. Available seats            |\n");
+    printf("|       b. Arrange for you            |\n");
+    printf("|       c. Choose by yourself         |\n");
+    printf("|       d. Exit                       |\n");
+    printf("---------------------------------------\n");
+//print out these table
+    
+    
+    
+    
 }
