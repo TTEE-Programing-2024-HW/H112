@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
+#define ROW 9
+#define COL 9
 
 int main()
 {
@@ -69,8 +73,53 @@ int main()
     printf("|       d. Exit                       |\n");
     printf("---------------------------------------\n");
 //print out these table
+    char seats[ROW][COL];
+
+        // Initialize seats
+        for (int i = 0; i < ROW; ++i) {
+            for (int j = 0; j < COL; ++j) {
+                seats[i][j] = '-';
+            }
+        }
+
+        // Randomly generate seat arrangement
+        srand((unsigned int)time(0)); // Use current time as seed for random number generator
+        for (int i = 0; i < 10; ++i) {
+            int row = rand() % ROW; // Generate random row index
+            int col = rand() % COL; // Generate random column index
+            seats[row][col] = '*'; // Mark the seat as reserved
+        }
     
     
+    char choice = ' '; //Declare variable choice and initialize it with a space to store the user's choice
     
-    
+    while(choice != 'd') { //Continue looping until the user's choice is 'd'
+        printf("Enter your choice: "); //Prompt the user to enter their choice
+        scanf(" %c", &choice); //Read the user's input choice
+
+        switch(choice) { //Execute the corresponding operation based on the user's choice
+            case 'a':
+                //Display seat arrangement
+                printf("  123456789\n");
+                for (int i = 0; i < ROW; ++i) {
+                    printf("%d ", i + 1);
+                    for (int j = 0; j < COL; ++j) {
+                        printf("%c", seats[i][j]); //Display the seat status
+                    }
+                    printf("\n");
+                }
+                break;
+            case 'b':
+            case 'c':
+                printf("Functionality not implemented yet.\n"); //Notify the user that the functionality is not implemented yet
+                break;
+            case 'd':
+                printf("Exiting program.\n"); //Notify the user that the program is exiting
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n"); //Notify the user of an invalid choice and prompt them to try again
+        }
+    }
 }
+
+
