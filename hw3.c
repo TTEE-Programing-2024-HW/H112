@@ -111,11 +111,9 @@ int main()
                 break;
             case 'b':
             case 'c':
-                printf("Functionality not implemented yet.\n"); //Notify the user that the functionality is not implemented yet
-                break;
+                
             case 'd':
-                printf("Exiting program.\n"); //Notify the user that the program is exiting
-                break;
+                
             default:
                 printf("Invalid choice. Please try again.\n"); //Notify the user of an invalid choice and prompt them to try again
         }
