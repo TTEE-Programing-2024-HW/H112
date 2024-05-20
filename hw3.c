@@ -106,6 +106,76 @@ int main()
                 }
                 break;
             }
+                
+                case 'c':
+                {
+                int seatnumber = 1; // Only input one seat
+                int row, col;
+
+                // Initialize seats array
+                char seats[ROW][COL];
+
+                // Manually initialize seats array
+                for (int i = 0; i < ROW; ++i)
+                    {
+                    for (int j = 0; j < COL; ++j)
+                        {
+                        seats[i][j] = '-';
+                        }
+                    }
+
+                // Prompt user to enter seat in row-col format
+                printf("Enter seat (format: row-col): ");
+                while (true)
+                    {
+                    scanf("%d-%d", &row, &col);
+                    // Check if input is valid and seat is available
+                    if (row < 1 || row > ROW || col < 1 || col > COL || seats[row - 1][col - 1] != '-') 
+                    {
+                        printf("Invalid input or seat already taken. Please try again.\n");
+                        printf("Enter seat (format: row-col): ");
+                    }
+                    else
+                    {
+                        // Mark seat as selected
+                        seats[row - 1][col - 1] = '@';
+                        break;
+                    }
+                }
+
+                // Display seat arrangement with selected seats marked
+                printf("Seat arrangement with your selected seat marked with '@':\n");
+                printf("  123456789\n");
+                for (int i = 0; i < ROW; ++i) 
+                {
+                    printf("%d ", i + 1);
+                    for (int j = 0; j < COL; ++j)
+                        {
+                        printf("%c", seats[i][j]);
+                        }
+                    printf("\n");
+                }
+
+                printf("Press any key to confirm your selection and return to the main menu: ");
+                while (getchar() != '\n'); // Clear input buffer
+                getchar(); // Wait for user to press a key
+
+                // Convert '@' to '*' to signify confirmed selection
+                for (int i = 0; i < ROW; ++i) 
+                {
+                    for (int j = 0; j < COL; ++j) 
+                    {
+                        if (seats[i][j] == '@') 
+                        {
+                            seats[i][j] = '*';
+                        }
+                    }
+                }
+                break;
+            }
+
+            case 'd':
+                
         }
     }
 
