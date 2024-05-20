@@ -7,7 +7,7 @@
 
 int main()
 {
-        printf("  000000000                     4444               000000000                77777777777777777777             \n");
+    printf("  000000000                     4444               000000000                77777777777777777777             \n");
     printf(" 00000000000                   44444              00000000000               77777777777777777777             \n");
     printf("0000000000000                 444444             0000000000000              7777            7777             \n");
     printf("000       000                444 444             000       000              7777            7777             \n");
@@ -231,10 +231,36 @@ int main()
                 }
                 break;
             }
-
-            case 'd':
-                
+        case 'd':
+                {
+                char a;
+                printf("Continue? (y/n)\n");
+                getchar(); // Absorb newline character
+                scanf(" %c", &a); // Get input
+                if (a == 'y' || a == 'Y')
+                {
+                    system("cls"); // Clear screen
+                    break; // Go back to the main menu
+                } 
+                else if (a == 'n' || a == 'N') 
+                {
+                        return 0; // End program
+                } 
+                else 
+                {
+                    printf("Invalid input, please enter 'y' or 'n'.\n");
+                    break;
+                }
+                default:
+                printf("Invalid input, please enter 'a', 'b', 'c', or 'd'.\n");
+                break;
         }
     }
+}
+    return 0;
+}
+                
+}
+}
 
 
