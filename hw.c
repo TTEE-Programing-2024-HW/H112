@@ -4,7 +4,8 @@
 #define MAX_STUDENTS 10
 
 //定義student
-struct Student {
+struct Student
+{
     char name[50];
     int id;
     int mathScore;
@@ -291,6 +292,7 @@ int main()
 }
                    
 
-
+//這次的作業做得比前幾次還艱難，因為terminal一直不讓我上傳，所以改用手動上傳，要一直從自己的Xcode裡複製過來有夠麻煩，目前還不知道為什麼真的很討厭。
+//這次作業是要用到陣列的程式碼，因為我對陣列很不熟悉，所以比之前寫的作意還久，希望之後我可以努力理解他並善用它，不然寫一寫一直卡住。TT
 
 
