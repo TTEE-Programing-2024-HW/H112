@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX_STUDENTS 10
+
+// 定義學生結構
+struct Student {
+    char name[50];
+    int id;
+    int mathScore;
+    int physicsScore;
+    int englishScore;
+};
+
 
 int main()
 {
