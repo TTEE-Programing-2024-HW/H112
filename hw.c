@@ -172,6 +172,59 @@ int main()
                 getchar();
                 getchar();
                 break;
+//No 6
+            case 'd':
+            case 'D':
+                system("cls"); // 清除螢幕
+                if (n == 0) 
+                {
+                    printf("目前沒有學生資料。\n");
+                }
+                else
+                {
+                    // 計算學生的平均成績
+                    float averageScores[MAX_STUDENTS];
+                    for (int i = 0; i < n; ++i) 
+                    {
+                        averageScores[i] = (students[i].mathScore + students[i].physicsScore + students[i].englishScore) / 3.0f;
+                    }
+
+                    // 根據平均成績排序學生資料
+                    for (int i = 0; i < n - 1; ++i) 
+                    {
+                        for (int j = 0; j < n - i - 1; ++j) 
+                        {
+                            if (averageScores[j] < averageScores[j + 1]) 
+                            {
+                                float tempAverage = averageScores[j];
+                                averageScores[j] = averageScores[j + 1];
+                                averageScores[j + 1] = tempAverage;
+                                
+                                struct Student tempStudent = students[j];
+                                students[j] = students[j + 1];
+                                students[j + 1] = tempStudent;
+                            }
+                        }
+                    }
+
+                    printf("按平均成績高低列出的學生資料：\n");
+                    for (int i = 0; i < n; ++i) {
+                        printf("姓名: %s\n", students[i].name);
+                        printf("學號: %d\n", students[i].id);
+                        printf("平均成績: %.1f\n", averageScores[i]);
+                        printf("\n");
+                    }
+                }
+                printf("按任意鍵回到主選單...");
+                getchar();
+                getchar();
+                break;
+
+        }
+    }
+    
+    return 0;
+}
 
             
         }
