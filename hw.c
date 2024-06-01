@@ -97,7 +97,7 @@ int main()
                     if (students[i].mathScore < 0 || students[i].mathScore > 100 ||students[i].physicsScore < 0 || students[i].physicsScore > 100 ||students[i].englishScore < 0 ||students[i].englishScore > 100)
                     {
                         printf("錯誤：請輸入有效的成績範圍 (0~100)。\n");
-                        --i; // 重新输入当前学生的资料
+                        --i; 
                     }
                 }
                 break;
@@ -125,22 +125,60 @@ int main()
                     }
                 }
                 printf("按任意鍵回到主選單...");
-                getchar(); // 等待用戶按下任意鍵
-                getchar(); // 捕獲上一次 getchar() 後的換行符號
+                getchar();
+                getchar();
                 break;
                 
-       
+// No 5
+            case 'c':
+            case 'C':
+                system("cls"); // 清除螢幕
                 
+                
+                if (n == 0)
+                {
+                    printf("目前沒有學生資料。\n");
+                } 
+                else
+                {
+                    char searchName[50];
+                    int found = 0;
+                    printf("請輸入要搜尋的姓名：");
+                    scanf("%s", searchName);
+                    for (int i = 0; i < n; ++i) {
+                        int j = 0;
+                        while (students[i].name[j] != '\0' && searchName[j] != '\0' && students[i].name[j] == searchName[j]) 
+                        {
+                            ++j;
+                        }
+                        if (students[i].name[j] == '\0' && searchName[j] == '\0')
+                        {
+                            printf("姓名: %s\n", students[i].name);
+                            printf("學號: %d\n", students[i].id);
+                            printf("數學成績: %d\n", students[i].mathScore);
+                            printf("物理成績: %d\n", students[i].physicsScore);
+                            printf("英文成績: %d\n", students[i].englishScore);
+                            float average = (students[i].mathScore + students[i].physicsScore + students[i].englishScore) / 3.0f;
+                            printf("平均成績: %.1f\n", average);
+                            found = 1;
+                            break;
+                        }
+                    }
+                    if (found == 0) {
+                        printf("資料不存在。\n");
+                    }
+                }
+                printf("按任意鍵回到主選單...");
+                getchar();
+                getchar();
+                break;
+
             
         }
     }
     
     return 0;
 }
-            
-    }
-
-
-                        
+                   
 
                         
