@@ -220,13 +220,32 @@ int main()
                 getchar();
                 break;
 
-        }
-    }
-    
-    return 0;
-}
-
-            
+// No7
+            case 'e':
+            case 'E':
+            {
+                char confirm;
+                system("cls"); // 清除螢幕
+                printf("確定離開？ (y/n): ");
+                scanf(" %c", &confirm);
+                if (confirm == 'y' || confirm == 'Y') {
+                printf("結束程式。\n");
+                return 0;
+            } 
+                else if (confirm == 'n' || confirm == 'N') 
+                {
+                    break; // 回到主選單
+                }
+                else 
+                {
+                printf("請輸入有效的選項。\n");
+                // 如果使用者輸入的不是 'y', 'n' 或 'Y', 'N'，則再問一次
+                printf("按任意鍵繼續...");
+                getchar(); 
+                getchar(); 
+                break;
+                }
+            }
         }
     }
     
